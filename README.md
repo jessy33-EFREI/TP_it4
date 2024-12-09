@@ -1,8 +1,8 @@
 # Ceci est l'endroit ou tu peux retrouver tout les TP du légendaire it4
 
-## TP numéro 1
+# TP numéro 1
 
-### 1. LAN
+## 1. LAN
 Voici le tableau d'adressage :
 
 node1.tp1.efrei ==>	192.168.1.1/24
