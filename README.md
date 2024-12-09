@@ -5,7 +5,7 @@
 ## 1. LAN
 Voici le tableau d'adressage :
 
-|node1.tp1.efrei | 192.168.1.1/24
+| node1.tp1.efrei | 192.168.1.1/24 |
 
 | node2.tp1.efrei | 192.168.1.2/24 |
 ### 1.1. Les adresses MAC.
