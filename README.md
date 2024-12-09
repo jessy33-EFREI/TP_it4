@@ -22,7 +22,7 @@ MAC         : 00:50:79:66:68:00
 LPORT       : 10000
 RHOST:PORT  : 127.0.0.1:10001
 MTU:        : 1500
-On a donc 00:50:79:66:68:00 pour la première machine.
+On a donc `00:50:79:66:68:00` pour la première machine.
 
 Machine 2:
 
