@@ -65,7 +65,7 @@ RHOST:PORT  : 127.0.0
 (On vérifie bien que l'addresse est bien appliquée avec show ip)
 
 Et une IP pour PC2:
-
+```
 PC2> ip 10.1.1.2/24
 Checking for duplicate address...
 PC1 : 10.1.1.2 255.255.255.0
@@ -80,26 +80,29 @@ MAC         : 00:50:79:66:68:01
 LPORT       : 10008
 RHOST:PORT  : 127.0.0.1:10009
 MTU:        : 1500
-1.3. Le ping.
+```
+### 1.3. Le ping.
 On vérifie que les deux machines se ping bien.
 
-# De PC1 à PC2:
-
+** De PC1 à PC2: **
+```
 PC1> ping 192.168.1.2
 84 bytes from 192.168.1.2 icmp_seq=1 ttl=64 time=0.254 ms
 84 bytes from 192.168.1.2 icmp_seq=2 ttl=64 time=0.436 ms
 84 bytes from 192.168.1.2 icmp_seq=3 ttl=64 time=0.214 ms
+```
 
-# De PC2 à PC1:
-
+** De PC2 à PC1 : **
+```
 PC2> ping 192.168.1.1
 84 bytes from 192.168.1.1 icmp_seq=1 ttl=64 time=0.756 ms
 84 bytes from 192.168.1.1 icmp_seq=2 ttl=64 time=0.458 ms
 84 bytes from 192.168.1.1 icmp_seq=3 ttl=64 time=0.117 ms
+```
 ### 1.4. Wireshark
 
 Les deux machines communiquent.
-Quel est le protocole utilisé pour le ping ? ICMP bien sûr.
+Quel est le protocole utilisé pour le ping ==> ICMP.
 
 ### 1.5 Requêtes ARP
 
@@ -107,13 +110,14 @@ On veut connaître les adresses MAC des deux machines.
 ==> ping de PC1 vers PC2 // observer les requêtes ARP.
 
 Après ping :
-
+```
 PC1> arp
 
 00:50:79:66:68:01  192.168.1.2 expires in 117 seconds
-==> L'adresse MAC de PC2 est 00:50:79:66:68:01.
+```
+==> L'adresse MAC de PC2 est `00:50:79:66:68:01`.
 
-On peut répéter l'opération dans l'autre sens, ici je préserve ton temps c'est la même chose.
+On peut répéter l'opération dans l'autre sens, ici je te fais pas perdre ton temps c'est la même chose.
 
 ## 2. Ajoutons un switch
 
