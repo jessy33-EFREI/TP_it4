@@ -1,5 +1,3 @@
-# Ceci est l'endroit ou tu peux retrouver tout les TP du légendaire it4
-
 # TP numéro 1
 
 ## 1. LAN
