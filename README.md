@@ -10,8 +10,9 @@ node2.tp1.efrei ==>	192.168.1.2/24
 ### 1.1. Les adresses MAC.
 On commence par déterminer les adressesMAC des deux machines.
 
-Machine 1:
+> Machine 1:
 
+```
 PC1> show ip
 
 NAME        : PC1[1]
@@ -22,6 +23,7 @@ MAC         : 00:50:79:66:68:00
 LPORT       : 10000
 RHOST:PORT  : 127.0.0.1:10001
 MTU:        : 1500
+```
 On a donc `00:50:79:66:68:00` pour la première machine.
 
 Machine 2:
