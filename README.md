@@ -215,11 +215,12 @@ On va maintenant ajouter un serveur DHCP pour attribuer les IP Dynamiquement.
 
 La table d'adressage
 
-Machines | IP 
-node1.tp1.efrei | pas encore d'ip 
-node2.tp1.efrei	| pas encore d'ip 
-node3.tp1.efrei	| pas encore d'ip 
-dhcp.tp1.efrei | 10.1.1.253/24
+|      Machines       | IP | 
+|:-------------------:|:----------------:| 
+| node1.tp1.efrei | pas encore d'ip |
+| node2.tp1.efrei	| pas encore d'ip | 
+| node3.tp1.efrei	| pas encore d'ip | 
+| dhcp.tp1.efrei | 10.1.1.253/24 |
 
 ## 3.1.1. Configuration du serveur DHCP.
 
