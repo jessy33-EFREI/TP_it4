@@ -2,12 +2,12 @@
 
 ## TP numéro 1
 
-### 1.LAN
+### 1. LAN
 Voici le tableau d'adressage :
 
 node1.tp1.efrei ==>	192.168.1.1/24
 node2.tp1.efrei ==>	192.168.1.2/24
-# 1.1. Les adresses MAC.
+### 1.1. Les adresses MAC.
 On commence par déterminer les adressesMAC des deux machines.
 
 Machine 1:
@@ -41,7 +41,7 @@ MTU:        : 1500
 PC2>
 Et 00:50:79:66:68:01 pour la seconde machine.
 
-# 1.2. Les adresses IP.
+### 1.2. Les adresses IP.
 Une IP pour PC1:
 
 PC1> ip 192.168.1.1/24
@@ -91,12 +91,12 @@ PC2> ping 192.168.1.1
 84 bytes from 192.168.1.1 icmp_seq=1 ttl=64 time=0.756 ms
 84 bytes from 192.168.1.1 icmp_seq=2 ttl=64 time=0.458 ms
 84 bytes from 192.168.1.1 icmp_seq=3 ttl=64 time=0.117 ms
-# 1.4. Wireshark
+### 1.4. Wireshark
 
 Les deux machines communiquent.
 Quel est le protocole utilisé pour le ping ? ICMP bien sûr.
 
-# 1.5 Requêtes ARP
+### 1.5 Requêtes ARP
 
 On veut connaître les adresses MAC des deux machines.
 ==> ping de PC1 vers PC2 // observer les requêtes ARP.
@@ -110,13 +110,13 @@ PC1> arp
 
 On peut répéter l'opération dans l'autre sens, ici je préserve ton temps c'est la même chose.
 
-# 2. Ajoutons un switch
+## 2. Ajoutons un switch
 
 On ajoute un PC3 avec 192.168.1.3/24 :
 
 node3.tp1.efrei	: 192.168.1.3/24
 
-# 2.1 Déterminer les adresses MAC + attribuer les IP
+### 2.1 Déterminer les adresses MAC + attribuer les IP
 
 a) Déterminer les adresses MAC des trois machines.
 b) On en profite pour vérifier que les IP sont bien attribuées.
@@ -171,7 +171,7 @@ LPORT       : 10009
 RHOST:PORT  : 127.0.0.1:10009
 MTU:        : 1500
 
-# 2.2. Le ping.
+### 2.2. Le ping.
 
 On ping toutes les machines entre elles :
 
@@ -207,7 +207,7 @@ node2.tp1.efrei	==> pas encore d'ip
 node3.tp1.efrei	==> pas encore d'ip 
 dhcp.tp1.efrei ==>	10.1.1.253/24
 
-# 3.1.1. Configuration du serveur DHCP.
+## 3.1.1. Configuration du serveur DHCP.
 
 On commence par fournir un accès internet au serveur DHCP.
 
@@ -242,7 +242,7 @@ On active le service DHCP:
 
 systemctl enable --now dhcpd
 
-# 3.1.2. Récupérer une IP pour un client
+### 3.1.2. Récupérer une IP pour un client
 
 Machine 1:
 
@@ -263,14 +263,14 @@ MTU:        : 1500
 
 # Même principe pour les deux autres machines gars.
 
-# 3.1.3. DHCP spoofing :
+### 3.1.3. DHCP spoofing :
 
 On observere les échanges entre le serveur DHCP et une machine.
 
 On va tenter de faire du DHCP spoofing ==> on essayera de récupérer les requêtes DHCP d'une machine cliente, et de lui attribuer une IP différente.
 On part d'une VM rocky Linux, comme conseillé dans le cours.
 
-# 3.2.1 Configuration du serveur
+### 3.2.1 Configuration du serveur
 
 Premièrement, on installe dnsmasq.
 
