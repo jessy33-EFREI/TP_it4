@@ -1,4 +1,6 @@
-# TP_it4
+# Ceci est l'endroit ou tu peux retrouver tout les TP du légendaire it4
+
+## TP numéro 1
 
 # 1.LAN
 Voici le tableau d'adressage :
@@ -312,5 +314,7 @@ On va observer le serveur légitime et enregistrer avec wireshark.
 
 On y verra que le dhcp illégitime ne récupère qu'une seule requête, et le dhcp légitime récupère le reste... 
 La solution serait de ralentir le légitime pour que l'illégitime intercepte plus de requetes.
+
+________________________________________________________________________________________________________________________
 
 ©  2024. PERTUS Jessy. Tous droits réservés.
