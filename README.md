@@ -6,6 +6,7 @@
 Voici le tableau d'adressage :
 
 node1.tp1.efrei ==>	192.168.1.1/24
+
 node2.tp1.efrei ==>	192.168.1.2/24
 ### 1.1. Les adresses MAC.
 On commence par déterminer les adressesMAC des deux machines.
@@ -26,9 +27,9 @@ MTU:        : 1500
 ```
 On a donc `00:50:79:66:68:00` pour la première machine.
 
-Machine 2:
+> Machine 2:
 
-
+```
 PC2> show ip
 
 NAME        : PC2[1]
@@ -39,13 +40,14 @@ MAC         : 00:50:79:66:68:01
 LPORT       : 10008
 RHOST:PORT  : 127.0.0.1:10009
 MTU:        : 1500
+```
 
-PC2>
-Et 00:50:79:66:68:01 pour la seconde machine.
+Et `00:50:79:66:68:01` pour la seconde machine.
 
 ### 1.2. Les adresses IP.
-Une IP pour PC1:
 
+Une IP pour PC1:
+```
 PC1> ip 192.168.1.1/24
 Checking for duplicate address...
 PC1 : 10.1.1.1 255.255.255.0
@@ -59,6 +61,7 @@ DNS         :
 MAC         : 00:50:79:66:68:00
 LPORT       : 10000
 RHOST:PORT  : 127.0.0
+```
 (On vérifie bien que l'addresse est bien appliquée avec show ip)
 
 Et une IP pour PC2:
