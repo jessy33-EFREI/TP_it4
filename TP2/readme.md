@@ -131,13 +131,13 @@
 ```
     
 ### Configuration du dhcp :
-'''
+```
     [rockylefragile@dhcptp2 ~]$ sudo dnf -y install dhcp-server
 
     [rockylefragile@dhcptp2 ~]$ sudo nano /etc/dhcp/dhcpd.conf
-'''   
+```   
 ### Contenu :
-'''
+```
     # this DHCP server to be declared valid
     authoritative;
 
@@ -150,12 +150,12 @@
         # specify gateway
         option routers 10.2.1.254;
     }
-'''
+```
 ## Test du DHCP sur node1.tp2.efrei
-'''
+```
     PC1> dhcp
     DDORA IP 10.2.1.10/24 GW 10.2.1.254
-'''
+```
 
 ## Wireshark
 
@@ -164,18 +164,18 @@ bzez.png à rajouter
 # III - ARP
 
 ## Affichez la table ARP de router.tp2.efrei
-'''
+```
     [rockylefragile@boxtp2 ~]$ ip neighbor show
     10.2.1.1 dev eth1 lladdr 00:50:79:66:68:03 STALE
     192.168.122.1 dev eth0 lladdr 52:54:00:21:04:c2 STALE
     10.2.1.253 dev eth1 lladdr 0c:f8:d7:3b:00:00 STALE
-'''
+```
 ## Capturez l'échange ARP avec Wireshark
 
 bzez2.png à rajouter
 
 ## Envoyer une trame ARP arbitraire
-'''
+```
     debianlefou@debian:~$ sudo apt install arping
 
     debianlefou@debian:~$ sudo arping 10.2.1.10
@@ -187,14 +187,14 @@ bzez2.png à rajouter
     --- 10.2.1.10 statistics ---
     3 packets transmitted, 6 packets received,   0% unanswered (3 extra)
     rtt min/avg/max/std-dev = 7.344/22.317/53.700/15.732 ms
-'''
-'''
+```
+```
     PC1> show arp
 
     0c:e6:03:92:00:00  10.2.1.11 expires in 79 seconds
-'''
+```
 ## Mettre en place un ARP MITM
-'''
+```
     debianlefou@debian:~$ sudo apt install dsniff
 
     debianlefou@debian:~$ sudo sysctl -w net.ipv4.ip_forward=1
@@ -204,22 +204,22 @@ bzez2.png à rajouter
     c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
     c:e6:3:92:0:0 0:50:79:66:68:0 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
     c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
-'''    
+```    
 ### Table ARP de node1.tp2.efrei :
-'''
+```
     PC1> show arp
 
     0c:e6:03:92:00:00  10.2.1.11 expires in 28 seconds
     0c:e6:03:92:00:00  10.2.1.254 expires in 120 seconds
-'''  
+``` 
 ### Table ARP de router.tp2.efrei :
-'''
+```
     [rockylefragile@boxtp2 ~]$ ip neighbor show
     10.2.1.11 dev eth1 lladdr 0c:e6:03:92:00:03 STALE
     192.168.122.1 dev eth0 lladdr 52:54:00:21:04:c2 STALE
     10.2.1.253 dev eth1 lladdr 0c:f8:d7:6b:00:00 STALE
     10.2.1.10 dev eth1 lladdr 0c:e6:03:92:00:00 REACHABLE
-'''   
+```   
 ## Capture Wireshark arp_mitm.pcap
 
 bzez3.png à add
