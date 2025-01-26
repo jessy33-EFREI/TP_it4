@@ -52,24 +52,24 @@
 
 ### Ping de node1.tp2.efrei vers router.tp2.efrei :
 
-'''
+```
     PC1> ping 10.2.1.254
 
     84 bytes from 10.2.1.254 icmp_seq=1 ttl=64 time=15.236 ms
     84 bytes from 10.2.1.254 icmp_seq=2 ttl=64 time=6.354 ms
     84 bytes from 10.2.1.254 icmp_seq=3 ttl=64 time=3.298 ms^C
-'''
+```
     
 ### Ping de node1.tp2.efrei vers 8.8.8.8 :
-'''
+```
     PC1> ping 8.8.8.8
 
     84 bytes from 8.8.8.8 icmp_seq=1 ttl=112 time=32.564 ms
     84 bytes from 8.8.8.8 icmp_seq=2 ttl=112 time=45.235 ms
-'''
+```
 
 #
-'''
+```
     PC1> trace 8.8.8.8
     trace to 8.8.8.8, 8 hops max, press Ctrl+C to stop
      1   10.2.1.254   4.231 ms  1.489 ms  0.820 ms
@@ -80,7 +80,7 @@
      6     *  *  *
      7     *  *  *
      8     *  *  *
-'''
+```
 
 ## Afficher la CAM Table du switch
 
@@ -97,7 +97,7 @@
 # II - Serveur DHCP
 
 ## Installation et configuration du serveur DHCP sur dhcp.tp2.efrei
-'''
+```
     [rockylefragile@dhcptp2 ~]$ ip a
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group defau0
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -113,12 +113,12 @@
            valid_lft forever preferred_lft forever
         inet6 fe80::ef8:d7ff:fe6a:0/64 scope link
            valid_lft forever preferred_lft forever
-'''
+```
     [rockylefragile@dhcptp2 ~]$ ip route show
     default via 10.2.1.254 dev eth0 proto static metric 100
     10.2.1.0/24 dev eth0 proto kernel scope link src 10.2.1.253 metric 100
-'''
-'''
+```
+```
     [rocky@dhcptp2 ~]$ ping 8.8.8.8
     PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
     64 bytes from 8.8.8.8: icmp_seq=1 ttl=112 time=50.687 ms
@@ -128,7 +128,7 @@
     --- 8.8.8.8 ping statistics ---
     3 packets transmitted, 3 received, 0% packet loss, time 2009ms
     rtt min/avg/max = 48/78/95
-'''
+```
     
 ### Configuration du dhcp :
 '''
