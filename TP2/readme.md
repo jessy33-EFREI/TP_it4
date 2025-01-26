@@ -128,14 +128,14 @@
     --- 8.8.8.8 ping statistics ---
     3 packets transmitted, 3 received, 0% packet loss, time 2009ms
     rtt min/avg/max = 48/78/95
-```
-    
+
+
 ### Configuration du dhcp :
 ```
     [rockylefragile@dhcptp2 ~]$ sudo dnf -y install dhcp-server
 
     [rockylefragile@dhcptp2 ~]$ sudo nano /etc/dhcp/dhcpd.conf
-```   
+```
 ### Contenu :
 ```
     # this DHCP server to be declared valid
